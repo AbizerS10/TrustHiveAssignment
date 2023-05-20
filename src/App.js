@@ -17,9 +17,11 @@ const App = () => {
   };
 
   useEffect(() => {
-    setFilteredTodos(
-      items.filter((item) => item.toLowerCase().includes(search.toLowerCase()))
-    );
+    setFilteredTodos([
+      ...items.filter((item) =>
+        item.toLowerCase().includes(search.toLowerCase())
+      ),
+    ]);
   }, [search]);
 
   const listofitems = () => {
